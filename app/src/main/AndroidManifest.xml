@@ -22,6 +22,12 @@
         </activity>
         <activity android:name="com.irfanberas_bdg.latihan.er_ex_java.operators.MergeActivity">
         </activity>
+        <activity android:name="com.irfanberas_bdg.latihan.er_ex_java.operators.FromArrayActivity">
+        </activity>
+        <activity android:name="com.irfanberas_bdg.latihan.er_ex_java.operators.RangeFusionActivity">
+        </activity>
+        <activity android:name="com.irfanberas_bdg.latihan.er_ex_java.operators.OperatorsActivity">
+        </activity>
     </application>
 
 </manifest>

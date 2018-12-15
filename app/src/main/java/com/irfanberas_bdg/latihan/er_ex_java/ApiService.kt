@@ -11,9 +11,6 @@ interface ApiService {
     @GET("3/discover/movie?api_key=1b2f29d43bf2e4f3142530bc6929d341&sort_by=popularity.desc")
     fun getMovies(): Observable<Movie>
 
-    @GET("3/discover/movie?api_key=sjdhgfjsdgfjshdgfjsgdf&sort_by=popularity.desc")
-    fun getMovie(): Observable<Movie>
-
     companion object Factory {
         val apiInstanceService: ApiService by lazy {
             val mRetrofit = Retrofit.Builder()

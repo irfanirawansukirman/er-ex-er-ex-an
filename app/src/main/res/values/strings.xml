@@ -3,4 +3,7 @@
     <string name="zip_multiple_request_api">Zip {Multiple Request API}</string>
     <string name="observables">Observables</string>
     <string name="operators">Operators</string>
+    <string name="from_array">From Array</string>
+    <string name="merge">Merge</string>
+    <string name="range_with_fusion">Range With Fusion</string>
 </resources>

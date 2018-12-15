@@ -6,29 +6,28 @@ import android.util.Log
 import com_irfanberas_bdg.latihan.er_ex_java.R
 import io.reactivex.Observable
 import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import java.util.concurrent.TimeUnit
+import io.reactivex.schedulers.Schedulers
 
-class MergeActivity : AppCompatActivity() {
+class RangeFusionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.merge_activity)
+        setContentView(R.layout.range_fusion_activity)
 
-        val alphabets1 = Observable
-            .interval(1, TimeUnit.SECONDS).map { id -> "A$id" }
-
-        val alphabets2 = Observable
-            .interval(1, TimeUnit.SECONDS).map { id -> "B$id" }
-
-        Observable.merge(alphabets1, alphabets2)
+        Observable.range(1, 20)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .filter { integer -> integer % 2 == 0 }
+            .map { integer -> integer.toString() + " is even number" }
             .subscribe(object : Observer<String> {
                 override fun onSubscribe(d: Disposable) {
 
                 }
 
                 override fun onNext(s: String) {
-                    Log.d("MERGE ", s)
+                    Log.d("IRFAN", "on Value $s")
                 }
 
                 override fun onError(e: Throwable) {
@@ -36,7 +35,7 @@ class MergeActivity : AppCompatActivity() {
                 }
 
                 override fun onComplete() {
-
+                    Log.d("IRFAN ", "All items is emitted")
                 }
             })
     }

@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import com.irfanberas_bdg.latihan.er_ex_java.ApiService
 import com.irfanberas_bdg.latihan.er_ex_java.Capture
 import com.irfanberas_bdg.latihan.er_ex_java.Movie
-import id.co.gits.belajarrx.R
+import com_irfanberas_bdg.latihan.er_ex_java.R
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -31,13 +31,11 @@ class ZipActivity : AppCompatActivity() {
 
     private fun callMultipleRequest() {
         val movie1 = ApiService.apiInstanceService.getMovies()
-        val movie2 = ApiService.apiInstanceService.getMovie()
+        val movie2 = ApiService.apiInstanceService.getMovies()
 
         Observable.zip(
-            movie1
-                .onErrorReturn { Movie(1, null, 0, 0) },
-            movie2
-                .onErrorResumeNext { error: Throwable -> Observable.just(Movie(0, null, 1, 1)) },
+            movie1,
+            movie2,
             BiFunction<Movie, Movie, Capture> { t1, t2 -> captureMovies(t1, t2) })
             // Run on background thread
             .subscribeOn(Schedulers.io())

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.irfanberas_bdg.latihan.er_ex_java.operators.OperatorsActivity">
+
+    <Button
+        android:id="@+id/btn_operators_fromArray"
+        android:text="@string/from_array"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_operators_merge"
+        android:text="@string/merge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_operators_range"
+        android:text="@string/range_with_fusion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
